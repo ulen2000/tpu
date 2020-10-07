@@ -1,12 +1,13 @@
 #coding:utf-8
 import os
 import json
-path_dir = '【数据集路径】'
+path_dir = r'C:\Users\admin\Desktop\image_large\test\foggy/'
+dict_in = {"name": "foggy"}
+dict = {'labels': [dict_in]}
 for file in os.listdir(path_dir):
     file_name = file.split('.')[0]
-dict_in = {"name": "【类别名称】"}
-dict = {'labels': [dict_in]}
-file_name1 = file_name + ".json"
-path_result_dir = '【json 存储路径】' + file_name1
-with open(path_result_dir, 'w')as f:
-    f.write(json.dumps(dict, ensure_ascii=False))
+    file_name1 = file_name + ".json"
+    path_result_dir =path_dir + file_name1
+    with open(path_result_dir, 'w+')as f:
+        f.write(json.dumps(dict, ensure_ascii=False))
+    print(file_name1 +"success")
