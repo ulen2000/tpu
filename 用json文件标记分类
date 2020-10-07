@@ -1,9 +1,12 @@
-#coding:utf-8 
+#coding:utf-8
 import os
 import json
-path_dir = '【数据集路径】' for file in os.listdir(path_dir):
-file_name = file.split('.')[0]
-dict_in = {"name": "【类别名称】"} dict = {'labels': [dict_in]}
+path_dir = '【数据集路径】'
+for file in os.listdir(path_dir):
+    file_name = file.split('.')[0]
+dict_in = {"name": "【类别名称】"}
+dict = {'labels': [dict_in]}
 file_name1 = file_name + ".json"
-path_result_dir = '【json 存储路径】' + file_name1 with open(path_result_dir, 'w')as f:
-f.write(json.dumps(dict, ensure_ascii=False))
+path_result_dir = '【json 存储路径】' + file_name1
+with open(path_result_dir, 'w')as f:
+    f.write(json.dumps(dict, ensure_ascii=False))
