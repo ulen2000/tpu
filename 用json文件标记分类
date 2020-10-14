@@ -16,3 +16,6 @@ for file in os.listdir(path_dir):
     if filename2=='json':
         os.remove(directory_name+filename)
         print(filename) 
+    #复制
+    import shutil
+    shutil.copy(os.path.join(pre_path, id_tuple[i] + ".jpg"), os.path.join(new_path, id_tuple[i] + ".jpg"))
