@@ -1,0 +1,5 @@
+    #按照指定格式，将文本分成3组（oss://(1).(2)/(3)）
+    o = re.search(r"oss://(.*?)\.(.*?)/(.*)", oss_path)
+    bucket = o.group(1)
+    host = o.group(2)
+    path = o.group(3)  
