@@ -11,3 +11,8 @@ for file in os.listdir(path_dir):
     with open(path_result_dir, 'w+')as f:
         f.write(json.dumps(dict, ensure_ascii=False))
     print(file_name1 +"success")
+    #删除
+    filename2 = file.split('.')[1]
+    if filename2=='json':
+        os.remove(directory_name+filename)
+        print(filename) 
