@@ -14,3 +14,14 @@ with open(filenamePath, "rb") as f:
     base64_data = base64.b64encode(f.read())
     
 requestBody = '{"dataArray":[{"name":"image","type":"stream","body":"'+base64_data.decode('ascii')+'"}]}'
+
+
+#or
+# -*- coding: utf-8 -*-
+#!/usr/bin/python3
+import base64
+import commands
+
+with open(r'11.jpg', 'rb') as f:
+    ls_f=base64.b64encode(f.read()) #读取文件内容，转换为base64编码
+    ls_f_new=ls_f.decode('utf-8')
